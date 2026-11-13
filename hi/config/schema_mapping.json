@@ -1,0 +1,62 @@
+{
+  "description": "Ánh xạ linh hoạt giữa cấu trúc dữ liệu bên ngoài (JSON/CSV/TXT khi giảng viên công bố) và mô hình chuẩn của AI Agent.",
+  "applicants_field_aliases": {
+    "applicant_id": ["applicant_id", "ma_ho_so", "ma_ung_vien", "id"],
+    "partner_name": ["partner_name", "ten_doi_tac", "ten_doanh_nghiep", "company_name", "name"],
+    "tax_id": ["tax_id", "ma_so_thue", "mst"],
+    "representative": ["representative", "nguoi_dai_dien", "chu_co_so"],
+    "phone": ["phone", "so_dien_thoai", "sdt", "dien_thoai"],
+    "email": ["email"],
+    "region": ["region", "khu_vuc"],
+    "province": ["province", "tinh_thanh", "tinh", "thanh_pho"],
+    "district": ["district", "quan_huyen", "quan", "huyen"],
+    "ward": ["ward", "phuong_xa", "phuong", "xa"],
+    "pos_address": ["pos_address", "dia_chi_diem_ban", "dia_chi"],
+    "latitude": ["latitude", "lat", "vi_do"],
+    "longitude": ["longitude", "lon", "lng", "kinh_do"],
+    "showroom_area_m2": ["showroom_area_m2", "dien_tich_m2", "dien_tich"],
+    "warranty_technicians": ["warranty_technicians", "so_ky_thuat_vien", "ky_thuat_vien"],
+    "warranty_notes": ["warranty_notes", "nang_luc_bao_hanh", "bao_hanh"],
+    "monthly_purchase_vnd_million": ["monthly_purchase_vnd_million", "ke_hoach_nhap_hang_trieu", "doanh_so_cam_ket_trieu"],
+    "requested_credit_days": ["requested_credit_days", "cong_no_yeu_cau_ngay", "so_ngay_cong_no"],
+    "requested_credit_limit_vnd_million": ["requested_credit_limit_vnd_million", "han_muc_cong_no_trieu", "han_muc_cong_no"],
+    "requested_marketing_support_pct": ["requested_marketing_support_pct", "ho_tro_thuong_mai_pct", "ty_le_ho_tro"],
+    "dossier_file": ["dossier_file", "file_ho_so", "text_file"],
+    "raw_text": ["raw_text", "noi_dung_ho_so", "van_ban"]
+  },
+  "existing_partners_field_aliases": {
+    "partner_id": ["partner_id", "ma_doi_tac", "id"],
+    "partner_name": ["partner_name", "ten_doi_tac", "name"],
+    "tax_id": ["tax_id", "ma_so_thue", "mst"],
+    "representative": ["representative", "nguoi_dai_dien"],
+    "phone": ["phone", "so_dien_thoai", "sdt"],
+    "email": ["email"],
+    "region": ["region", "khu_vuc"],
+    "status": ["status", "trang_thai"]
+  },
+  "existing_pos_field_aliases": {
+    "pos_id": ["pos_id", "ma_diem_ban", "id"],
+    "partner_id": ["partner_id", "ma_doi_tac"],
+    "partner_name": ["partner_name", "ten_doi_tac"],
+    "region": ["region", "khu_vuc"],
+    "province": ["province", "tinh_thanh", "tinh"],
+    "district": ["district", "quan_huyen", "quan"],
+    "ward": ["ward", "phuong_xa", "phuong"],
+    "address": ["address", "dia_chi"],
+    "latitude": ["latitude", "lat", "vi_do"],
+    "longitude": ["longitude", "lon", "lng", "kinh_do"],
+    "protection_scope": ["protection_scope", "pham_vi_bao_ho", "che_do_bao_ho"],
+    "protection_radius_km": ["protection_radius_km", "ban_kinh_bao_ho_km"]
+  },
+  "verification_results_field_aliases": {
+    "applicant_id": ["applicant_id", "ma_ho_so", "ma_ung_vien"],
+    "pos_verified": ["pos_verified", "xac_minh_diem_ban"],
+    "warranty_verified": ["warranty_verified", "xac_minh_bao_hanh"],
+    "financial_verified": ["financial_verified", "xac_minh_tai_chinh"],
+    "identity_verified": ["identity_verified", "xac_minh_danh_tinh"],
+    "verified_by": ["verified_by", "bo_phan_xac_minh", "nguoi_xac_minh"],
+    "verification_date": ["verification_date", "ngay_xac_minh"],
+    "verification_notes": ["verification_notes", "ghi_chu_xac_minh", "ket_luan_xac_minh"]
+  }
+}
+

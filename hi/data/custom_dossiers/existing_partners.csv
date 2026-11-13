@@ -1,0 +1,7 @@
+partner_id,partner_name,tax_id,representative,phone,email,region,status
+DT001,Công ty TNHH Điện máy Thủ Đô,0108889991,Nguyễn Văn Hùng,0912345678,hung@thudodienmay.vn,Miền Bắc,ACTIVE
+DT002,Cửa hàng Bếp Kinh Bắc,2300778899,Trần Thị Mai,0987654321,mai@bepkinhbac.vn,Miền Bắc,ACTIVE
+DT003,Công ty CP Gia dụng Miền Trung,0400556677,Lê Minh Tuấn,0905112233,tuan@giadungmientrung.vn,Miền Trung,ACTIVE
+DT004,Công ty TNHH Tân Phát,0312345678,Phạm Quốc Bảo,0909887766,bao@tanphat.vn,Miền Nam,ACTIVE
+DT005,Trung tâm Điện máy Sài Gòn Xanh,0319998882,Võ Thành Nam,0933445566,nam@saigonxanh.vn,Miền Nam,ACTIVE
+

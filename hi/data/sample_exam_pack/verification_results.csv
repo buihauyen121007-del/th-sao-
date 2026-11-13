@@ -1,0 +1,10 @@
+applicant_id,identity_verified,pos_verified,warranty_verified,financial_verified,verified_by,verification_date,verification_notes
+HS001,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,Kinh doanh + Vận hành + Tài chính,2026-11-05,Đã kiểm tra thực địa showroom 120m2 Long Biên; 3 KTV có chứng chỉ điện lạnh-gia dụng; BCTC đủ hạn mức 400tr.
+HS002,PENDING,VERIFIED_PASS,VERIFIED_PASS,PENDING,Kinh doanh,2026-11-06,Phát hiện MST trùng hồ sơ đối tác hệ thống DT004; tạm dừng kiểm tra tài chính.
+HS003,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,Vận hành + Tài chính,2026-11-06,Showroom 95m2 tại Hải Châu đạt chuẩn; 2 KTV bảo hành; BCTC hợp lệ. Chưa đối chiếu bảo hộ địa bàn.
+HS004,VERIFIED_PASS,PENDING,NOT_SUBMITTED,NOT_SUBMITTED,Kinh doanh,2026-11-07,Ứng viên cam kết nhập 900 triệu/tháng nhưng chưa nộp ảnh mặt bằng kho, chưa có hồ sơ KTV bảo hành và chưa có BCTC.
+HS005,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,Kinh doanh + Vận hành + Tài chính,2026-11-07,Showroom 60m2 tại Lê Chân đạt chuẩn tối thiểu; 1 KTV chuyên trách đã kiểm tra thực tế; hồ sơ tài chính đạt chuẩn 500tr/30 ngày.
+HS007,VERIFIED_PASS,VERIFIED_FAIL,VERIFIED_FAIL,VERIFIED_PASS,Vận hành,2026-11-08,Thực địa cửa hàng chỉ rộng 25m2 không đạt trưng bày gia dụng; không có nhân sự kỹ thuật bảo hành.
+HS008,PENDING,VERIFIED_PASS,VERIFIED_PASS,PENDING,Vận hành,2026-11-08,Mặt bằng Từ Sơn 85m2 và 2 KTV đạt; chờ Kinh doanh làm rõ quan hệ với Bếp Kinh Bắc và chờ Tài chính rà soát vốn.
+HS009,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,Kinh doanh + Vận hành + Tài chính,2026-11-09,Mặt bằng 110m2 và 3 KTV đạt chuẩn; tài chính tốt nhưng đang đề nghị vượt trần công nợ 35 ngày / 550 triệu.
+HS010,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,VERIFIED_PASS,Kinh doanh + Vận hành + Tài chính,2026-11-09,Đã nghiệm thu showroom 150m2 Biên Hòa, trạm bảo hành 4 KTV, hồ sơ bảo lãnh ngân hàng hợp lệ.

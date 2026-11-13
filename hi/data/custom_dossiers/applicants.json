@@ -1,0 +1,23 @@
+[
+{
+    "applicant_id":  "HS001",
+    "submitted_at":  "2026-11-01",
+    "dossier_file":  "dossiers/HS001.txt",
+    "partner_name":  "ê nhỏ lớp trưởng",
+    "representative":  "Hà Quỳnh dùng giả",
+    "phone":  "0981727781",
+    "email":  "huhu@gmail.com",
+    "region":  "Miền Bắc",
+    "province":  "Lào Cai",
+    "district":  "Bắc Ning",
+    "ward":  "Hàn Quốc",
+    "pos_address":  "HPC landmark",
+    "warranty_notes":  "rì viu",
+    "showroom_area_m2":  200,
+    "warranty_technicians":  3,
+    "monthly_purchase_vnd_million":  100,
+    "requested_credit_days":  20,
+    "requested_credit_limit_vnd_million":  300,
+    "requested_marketing_support_pct":  2
+}
+]

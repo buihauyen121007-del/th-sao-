@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đại Thành Partner AI Agent — Melody Glass Pink Edition</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Fullscreen Kawaii Melody Bakery Backdrop -->
+  <div class="glass-wallpaper" aria-hidden="true"></div>
+  <div class="glass-pink-tint" aria-hidden="true"></div>
+
+  <div class="glass-viewport">
+    <!-- TOP FLOATING GLASS NAVIGATION & BRAND ROW -->
+    <header class="glass-topbar">
+      <div class="topbar-row-1">
+        <div class="brand-glass-pill">
+          <div class="brand-avatar">
+            <img src="/kawaii-bakery.jpg" alt="My Melody" />
+          </div>
+          <div class="brand-copy">
+            <div class="brand-title-line">
+              <strong id="pageMainTitle">ĐẠI THÀNH B2B AGENT</strong>
+              <span id="serverStatusPill" class="badge badge-neutral">Đang kiểm tra...</span>
+            </div>
+            <div class="brand-sub">AI301 · Đề 05 · Melody Glass Pink Edition</div>
+          </div>
+        </div>
+
+        <nav class="main-nav-pill" aria-label="Điều hướng chính">
+          <button class="nav-pill-btn tab-btn active" data-tab="tab-overview" data-title="ĐẠI THÀNH B2B AGENT">✦ 1. Không gian Đối tác</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-flowchart" data-title="LƯU ĐỒ LARK BASE">✦ 2. Lưu đồ Lark Base</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-create" data-title="TẠO HỒ SƠ ĐỐI TÁC MỚI">＋ 3. Tạo hồ sơ</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-regional" data-title="BẢNG ĐỀ XUẤT 3 KHU VỰC">4. Khu vực</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-dossiers" data-title="HỒ SƠ & BẢN NHÁP EMAIL">5. Hồ sơ &amp; Nháp</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-escalations" data-title="CHUYỂN CẤP THẨM QUYỀN">6. Thẩm quyền</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-verification" data-title="KẾ HOẠCH XÁC MINH">7. Xác minh</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-logs" data-title="NHẬT KÝ TRUY VẾT AI">8. Nhật ký AI</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-exam" data-title="NẠP DỮ LIỆU THI & QUY TẮC">9. Nạp thi</button>
+          <button class="nav-pill-btn tab-btn" data-tab="tab-tests" data-title="TỰ KIỂM THỬ 10/10">10. Kiểm thử</button>
+        </nav>
+      </div>
+
+      <!-- SECOND FLOATING GLASS ACTION BAR -->
+      <div class="topbar-row-2">
+        <div class="quick-pill-bar">
+          <select id="datasetSelect" class="glass-select" title="Chọn bộ dữ liệu">
+            <option value="sample_exam_pack">sample_exam_pack (10 hồ sơ)</option>
+          </select>
+          <select id="modeSelect" class="glass-select" title="Chế độ thực thi Agent">
+            <option value="auto">Tự động (LLM / Local)</option>
+            <option value="local">Local Agent (Offline)</option>
+            <option value="llm">LLM Tool Calling</option>
+          </select>
+          <button id="runAgentBtn" class="btn btn-pink-glass-cta">✦ Chạy AI Agent</button>
+          <button id="openCreateDossierBtn" type="button" class="btn btn-pink-pill-light">＋ Tạo hồ sơ</button>
+          <button id="runTestsBtn" class="btn btn-pink-pill-light">⚡ Kiểm thử 10/10</button>
+          <button id="toggleAiConfigBtn" type="button" class="btn btn-glass-subtle">AI Key &amp; Model</button>
+          <select id="pastRunsSelect" class="glass-select" title="Tải phiên đã lưu">
+            <option value="">-- Phiên đã lưu --</option>
+          </select>
+          <button id="downloadJsonBtn" class="btn btn-glass-subtle" disabled>Tải JSON</button>
+        </div>
+
+        <div class="meta-banner glass-banner-chip" id="runBanner">
+          <span>Chưa có phiên chạy trong trình duyệt. Nhấn <strong>Chạy AI Agent</strong>.</span>
+        </div>
+      </div>
+
+      <div id="aiConfigDrawer" class="ai-config-drawer hidden">
+        <select id="providerSelect" class="glass-select" title="Nhà cung cấp mô hình AI">
+          <option value="gemini">Gemini API (Tool Calling)</option>
+          <option value="openai">OpenAI-Compatible (Tool Calling)</option>
+        </select>
+        <input id="modelNameInput" class="glass-input" type="text" placeholder="Model (vd: gemini-2.5-flash)" style="width: 190px;" />
+        <input id="apiKeyInput" class="glass-input" type="password" placeholder="API Key (tùy chọn)" style="width: 190px;" />
+      </div>
+    </header>
+
+    <main class="glass-main">
+      <!-- ==================== TAB 0: GLASS OVERVIEW (MELODY CENTER + ALL PINK) ==================== -->
+      <section id="tab-overview" class="tab-panel active">
+        <div class="glass-upper-grid">
+          <!-- Left Frosted Pink Hero Card -->
+          <div class="glass-card glass-hero-card">
+            <div class="hero-kicker-pill">✿ ĐẠI THÀNH MELODY · PARTNER AI AGENT</div>
+            <h1 class="hero-glass-title">Hệ thống AI Agent<br>Công ty Đại Thành</h1>
+            <p class="hero-glass-desc">
+              Tiếp nhận ~30 hồ sơ/tháng tại 3 khu vực, tự động bóc tách dữ liệu văn bản, đối chiếu danh tính &amp; địa bàn bảo hộ (≤ 5 km), kiểm tra công nợ và lập kế hoạch xác minh.
+            </p>
+
+            <!-- Inset Sub-card with Live Chart Sparkline -->
+            <div class="sub-glass-card">
+              <div class="sub-glass-head">
+                <div>
+                  <strong>✦ Biểu đồ Thực chứng vs Tự khai</strong>
+                  <span id="heroChartCaption" class="sub-caption">Điểm thực chứng vs Tự khai từng hồ sơ</span>
+                </div>
+                <div style="display:flex; gap:6px;">
+                  <button id="heroSwapBtn" type="button" class="mini-glass-icon" title="Đổi biểu đồ (Hồ sơ / 3 Khu vực)">⇄</button>
+                  <button id="heroSettingsBtn" type="button" class="mini-glass-icon" title="Cấu hình Quy tắc">⚙</button>
+                </div>
+              </div>
+              <div class="hero-chart-wrap" id="heroChartWrap">
+                <svg id="heroAreaChart" viewBox="0 0 560 125" preserveAspectRatio="none"></svg>
+                <div id="chartTooltip" class="chart-tooltip hidden"></div>
+              </div>
+            </div>
+
+            <!-- Inset Safety Rule Card + CTA Buttons -->
+            <div class="sub-glass-card hero-safety-box">
+              <div style="font-size:0.8rem;">
+                <strong>🛡 Nguyên tắc an toàn:</strong> Không tự coi cam kết là bằng chứng — tách ngoại lệ <code><=5km</code>, công nợ <code>>30ng/500tr/5%</code> &amp; chạy 10 kịch bản kiểm thử chuẩn.
+              </div>
+              <div class="hero-cta-row">
+                <button id="heroRunBtn" type="button" class="btn btn-pink-glass-cta">Chạy AI Agent</button>
+                <button id="heroFlowBtn" type="button" class="btn btn-pink-pill-light">✦ Lưu đồ Lark Base</button>
+                <button id="heroDetailBtn" type="button" class="btn btn-glass-subtle">Hồ sơ &amp; Nháp</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Upper Bay: KPI Strip + Pink Highlight Value Pill + Center Melody Spotlight -->
+          <div class="glass-upper-right">
+            <!-- KPI Row -->
+            <div class="kpi-glass-row" id="kpiGrid">
+              <div class="kpi-glass-card">
+                <span class="kpi-g-label">Tổng hồ sơ</span>
+                <strong class="kpi-g-val" id="kpiTotal">-</strong>
+                <span class="kpi-g-sub">3 khu vực phân phối</span>
+              </div>
+              <div class="kpi-glass-card ok">
+                <span class="kpi-g-label">● Tiếp tục</span>
+                <strong class="kpi-g-val" id="kpiContinue">-</strong>
+                <span class="kpi-g-sub">Đủ bằng chứng đạt</span>
+              </div>
+              <div class="kpi-glass-card warn">
+                <span class="kpi-g-label">● Cần bổ sung</span>
+                <strong class="kpi-g-val" id="kpiSupplement">-</strong>
+                <span class="kpi-g-sub">Thiếu dữ liệu / Xác minh</span>
+              </div>
+              <div class="kpi-glass-card hold">
+                <span class="kpi-g-label">● Thẩm quyền</span>
+                <strong class="kpi-g-val" id="kpiEscalations">-</strong>
+                <span class="kpi-g-sub">Trưởng phòng duyệt</span>
+              </div>
+              <div class="kpi-glass-card err">
+                <span class="kpi-g-label">● Chưa tiếp tục</span>
+                <strong class="kpi-g-val" id="kpiNotContinue">-</strong>
+                <span class="kpi-g-sub">Không đạt / Trùng MST</span>
+              </div>
+              <div class="kpi-glass-card pink">
+                <span class="kpi-g-label">✦ Audit Log</span>
+                <strong class="kpi-g-val" id="kpiLogs">-</strong>
+                <span class="kpi-g-sub">Sự kiện truy vết</span>
+              </div>
+            </div>
+
+            <!-- Wide Pink Highlight Value Pill Banner -->
+            <div class="glass-card glass-value-banner">
+              <div class="value-banner-left">
+                <div class="value-banner-kicker">
+                  <span class="hero-mini-emblem" id="heroEmblem">DT</span>
+                  <span>HỒ SƠ ĐANG CHỌN · ĐIỂM THỰC CHỨNG &amp; ĐỀ XUẤT AI</span>
+                </div>
+                <div id="heroMetricSub" class="value-banner-sub">Chọn một đối tác bên dưới hoặc nhấn Chạy AI Agent</div>
+              </div>
+              <div class="value-pill-badge" id="heroMetricValue">-- / 100</div>
+            </div>
+
+            <!-- CENTER TRANSPARENT MELODY SHOWCASE WINDOW -->
+            <div class="melody-center-stage">
+              <div class="melody-stage-frame">
+                <img src="/kawaii-bakery.jpg" alt="My Melody Kawaii Bakery Centerpiece" class="melody-center-img" />
+                <div class="melody-stage-gloss"></div>
+                <div class="melody-floating-chip top-left">✿ Melody Pink Workspace</div>
+                <div class="melody-floating-chip bottom-right">Lark Base → AI Agent → HTML ✦</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Master-Detail Translucent Split -->
+        <div class="glass-bottom-split">
+          <!-- Left List + Filter Pills -->
+          <div class="glass-card glass-list-panel">
+            <div class="list-panel-head">
+              <strong>✦ Danh sách Hồ sơ Đối tác</strong>
+              <div class="view-mode-pills">
+                <button type="button" class="mini-pill-tab active" id="modeListBtn">Tất cả</button>
+                <button type="button" class="mini-pill-tab" id="modeQueueBtn">Theo trạng thái</button>
+              </div>
+            </div>
+            <div class="search-wrap" style="margin-bottom:8px;">
+              <input id="overviewSearchInput" type="search" class="glass-input" style="width:100%;" placeholder="🔍 Tìm mã HS, tên đối tác, khu vực..." />
+            </div>
+
+            <div id="overviewListContainer">
+              <div id="overviewPartnerList" class="partner-card-stack">
+                <div class="empty-card-hint">Đang tải danh sách đối tác...</div>
+              </div>
+            </div>
+
+            <div id="overviewQueueContainer" class="hidden">
+              <div class="queue-group-title">Cần xác minh / Chuyển cấp (<span id="overviewPendingCount">0</span>)</div>
+              <div id="overviewPendingList" class="feed-list"></div>
+              <div class="queue-group-title" style="margin-top:10px;">Đã hoàn tất phân loại (<span id="overviewCompletedCount">0</span>)</div>
+              <div id="overviewCompletedList" class="feed-list"></div>
+            </div>
+          </div>
+
+          <!-- Right Detail Inspector -->
+          <div class="glass-card glass-detail-panel">
+            <div class="details-card-header">
+              <span class="detail-head-kicker">HỒ SƠ ĐỐI TÁC &amp; ĐỐI CHIẾU NGHIỆP VỤ</span>
+              <button type="button" class="btn btn-pink-pill-light btn-sm" id="jumpFullDossierBtn">Mở đầy đủ &amp; Bản nháp ↗</button>
+            </div>
+            <div id="overviewDetailPanel" class="details-body">
+              <p class="muted-text">Chọn một đối tác bên trái để xem hồ sơ chi tiết, điểm thực chứng và tiến trình xác minh.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB FLOWCHART: LARK BASE FULL FLOWCHART ==================== -->
+      <section id="tab-flowchart" class="tab-panel">
+        <div class="glass-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">✦ Lưu đồ Quy trình Đầy đủ: Lark Base → AI Agent Đại Thành → Xuất HTML (BC &amp; Dashboard)</h3>
+              <div class="muted-text" style="font-size:0.82rem; margin-top:4px;" id="flowchartLiveSummary">
+                Chuyển thể từ bản nháp bảng trắng kèm đầy đủ quy tắc (<code>rules_config.json</code>), ánh xạ schema, 3 kỹ năng, 7 công cụ và cổng kiểm soát con người (HITL 1–3).
+              </div>
+            </div>
+            <div class="flowchart-filters">
+              <button type="button" class="btn btn-sm btn-pink-glass-cta flow-filter-btn active" data-flow-filter="all">Tất cả luồng</button>
+              <button type="button" class="btn btn-sm btn-glass-subtle flow-filter-btn" data-flow-filter="ok">Nhánh OK</button>
+              <button type="button" class="btn btn-sm btn-glass-subtle flow-filter-btn" data-flow-filter="ko">Nhánh Lỗi &amp; Feedback</button>
+            </div>
+          </div>
+
+          <div class="flowchart-canvas-wrap">
+            <svg id="flowchartSvg" viewBox="0 0 1040 464" class="flowchart-svg">
+              <defs>
+                <marker id="fc-arr-ok" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                  <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#6ee7b7" />
+                </marker>
+                <marker id="fc-arr-ko" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                  <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#fda4af" />
+                </marker>
+                <marker id="fc-arr-pink" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                  <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#ff9fd0" />
+                </marker>
+                <marker id="fc-arr-warn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                  <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#fde047" />
+                </marker>
+              </defs>
+
+              <!-- EDGES -->
+              <g class="fc-edge edge-ok">
+                <path d="M 260 74 L 336 74" fill="none" stroke="#6ee7b7" stroke-width="2.4" marker-end="url(#fc-arr-ok)" />
+                <rect x="284" y="51" width="32" height="18" rx="5" fill="#4f1633" stroke="#6ee7b7" stroke-width="1.4" />
+                <text x="300" y="64" text-anchor="middle" font-size="11.5" font-weight="800" fill="#6ee7b7">OK</text>
+              </g>
+
+              <g class="fc-edge edge-ko">
+                <path d="M 299 74 L 299 154" fill="none" stroke="#fda4af" stroke-width="2.2" marker-end="url(#fc-arr-ko)" />
+                <rect x="306" y="105" width="32" height="18" rx="5" fill="#4f1633" stroke="#fda4af" stroke-width="1.4" />
+                <text x="322" y="118" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fda4af">KO</text>
+              </g>
+
+              <g class="fc-edge edge-ok">
+                <path d="M 594 74 L 678 74" fill="none" stroke="#6ee7b7" stroke-width="2.4" marker-end="url(#fc-arr-ok)" />
+                <rect x="620" y="51" width="32" height="18" rx="5" fill="#4f1633" stroke="#6ee7b7" stroke-width="1.4" />
+                <text x="636" y="64" text-anchor="middle" font-size="11.5" font-weight="800" fill="#6ee7b7">OK</text>
+              </g>
+
+              <g class="fc-edge edge-ko">
+                <path d="M 636 74 L 636 187 L 542 187" fill="none" stroke="#fda4af" stroke-width="2.2" marker-end="url(#fc-arr-ko)" />
+                <rect x="643" y="121" width="32" height="18" rx="5" fill="#4f1633" stroke="#fda4af" stroke-width="1.4" />
+                <text x="659" y="134" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fda4af">KO</text>
+              </g>
+
+              <g class="fc-edge edge-ko">
+                <path d="M 248 187 L 138 187 L 138 136" fill="none" stroke="#fda4af" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#fc-arr-ko)" />
+              </g>
+
+              <g class="fc-edge edge-ok">
+                <path d="M 818 136 L 818 240" fill="none" stroke="#ff9fd0" stroke-width="2.4" marker-end="url(#fc-arr-pink)" />
+              </g>
+
+              <g class="fc-edge edge-ok">
+                <path d="M 680 304 L 588 304" fill="none" stroke="#6ee7b7" stroke-width="2.4" marker-end="url(#fc-arr-ok)" />
+                <rect x="618" y="281" width="32" height="18" rx="5" fill="#4f1633" stroke="#6ee7b7" stroke-width="1.4" />
+                <text x="634" y="294" text-anchor="middle" font-size="11.5" font-weight="800" fill="#6ee7b7">OK</text>
+              </g>
+
+              <g class="fc-edge edge-ko">
+                <path d="M 818 354 L 818 390" fill="none" stroke="#fde047" stroke-width="2.2" marker-end="url(#fc-arr-warn)" />
+                <rect x="826" y="362" width="32" height="18" rx="5" fill="#4f1633" stroke="#fde047" stroke-width="1.4" />
+                <text x="842" y="375" text-anchor="middle" font-size="11.5" font-weight="800" fill="#fde047">KO</text>
+              </g>
+
+              <g class="fc-edge edge-ko">
+                <path d="M 960 423 L 1012 423 L 1012 74 L 958 74" fill="none" stroke="#fde047" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#fc-arr-warn)" />
+              </g>
+
+              <g class="fc-edge edge-ok">
+                <path d="M 356 310 C 326 310, 326 276, 296 276" fill="none" stroke="#ff9fd0" stroke-width="2.4" marker-end="url(#fc-arr-pink)" />
+                <path d="M 356 310 C 326 310, 326 358, 296 358" fill="none" stroke="#ff9fd0" stroke-width="2.4" marker-end="url(#fc-arr-pink)" />
+              </g>
+
+              <!-- NODES (PINK GLASS THEME) -->
+              <g class="fc-node selected" data-fc-id="larkbase">
+                <rect class="fc-box" x="16" y="14" width="244" height="120" rx="14" fill="rgba(166, 40, 102, 0.78)" stroke="#ffc4e0" stroke-width="2" />
+                <text x="28" y="36" font-size="13.5" font-weight="800" fill="#ffd6eb">1. LARK BASE (Nguồn ĐT)</text>
+                <line x1="28" y1="44" x2="248" y2="44" stroke="rgba(255,214,235,0.35)" />
+                <text x="28" y="61" font-size="12" fill="#ffffff">• ~30 HS/tháng tại 3 khu vực</text>
+                <text x="28" y="78" font-size="12" fill="#ffffff">• Hồ sơ (JSON/CSV + TXT)</text>
+                <text x="28" y="95" font-size="12" fill="#ffffff">• DS Đối tác &amp; Điểm bán (GPS)</text>
+                <text x="28" y="112" font-size="12" fill="#ffffff">• KQ Xác minh, Quy tắc, Schema</text>
+                <text x="28" y="127" font-size="12" font-weight="700" fill="#ffd6eb">→ Băm SHA-256 nguyên bản</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="cleaning">
+                <rect class="fc-box" x="338" y="14" width="256" height="120" rx="14" fill="rgba(166, 40, 102, 0.72)" stroke="rgba(255,214,235,0.65)" stroke-width="1.8" />
+                <text x="350" y="36" font-size="13.5" font-weight="800" fill="#ffd6eb">2. CLEANING (Tool 1)</text>
+                <line x1="350" y1="44" x2="582" y2="44" stroke="rgba(255,214,235,0.35)" />
+                <text x="350" y="61" font-size="12" fill="#ffffff">• Ánh xạ bí danh schema_mapping</text>
+                <text x="350" y="78" font-size="12" fill="#ffffff">• Trích văn bản (m2, KTV, nợ)</text>
+                <text x="350" y="95" font-size="12" fill="#ffffff">• Giữ trích dẫn gốc (quotes)</text>
+                <text x="350" y="112" font-size="12" fill="#ffffff">• Chuẩn hóa không dấu &amp; đơn vị</text>
+                <text x="350" y="127" font-size="12" font-weight="700" fill="#ffd6eb">→ Gắn cờ thiếu (missing_fields)</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="process">
+                <rect class="fc-box" x="680" y="14" width="276" height="122" rx="14" fill="rgba(196, 46, 120, 0.78)" stroke="#ffb8da" stroke-width="2" />
+                <text x="692" y="36" font-size="13.5" font-weight="800" fill="#ffe0f0">3. PROCESS (3 Skills · 7 Tools)</text>
+                <line x1="692" y1="44" x2="944" y2="44" stroke="rgba(255,214,235,0.35)" />
+                <text x="692" y="61" font-size="12" fill="#ffffff">• LLM Function Call / Local Hybrid</text>
+                <text x="692" y="78" font-size="12" fill="#ffffff">• S1: MST, tên ≥82%, ≤5km, ≤30 ngày</text>
+                <text x="692" y="95" font-size="12" fill="#ffffff">• S2: 4 TC (Thực chứng vs Tự khai)</text>
+                <text x="692" y="112" font-size="12" fill="#ffffff">• S3: Phân P1–P3, HOLD, REJECT</text>
+                <text x="692" y="128" font-size="12" font-weight="700" fill="#ffd6eb">→ Ghi nhật ký logs/&lt;run&gt;.jsonl</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="error">
+                <rect class="fc-box" x="248" y="156" width="292" height="62" rx="12" fill="rgba(165, 22, 68, 0.82)" stroke="#fda4af" stroke-width="2" />
+                <text x="260" y="177" font-size="13" font-weight="800" fill="#fecdd3">LỖI (Cấu trúc / Nguồn KO)</text>
+                <text x="260" y="195" font-size="12" fill="#ffffff">• Thiếu bảng, sai JSON/CSV/UTF-8</text>
+                <text x="260" y="210" font-size="12" fill="#fecdd3">→ Báo sửa Lark Base (không sửa tay)</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="verify">
+                <rect class="fc-box" x="680" y="242" width="276" height="112" rx="14" fill="rgba(166, 40, 102, 0.72)" stroke="rgba(255,214,235,0.65)" stroke-width="1.8" />
+                <text x="692" y="264" font-size="13.5" font-weight="800" fill="#ffd6eb">4. VERIFY (Kiểm soát &amp; HITL)</text>
+                <line x1="692" y1="272" x2="944" y2="272" stroke="rgba(255,214,235,0.35)" />
+                <text x="692" y="289" font-size="12" fill="#ffffff">• Bất biến: Cấm duyệt nếu còn ngoại lệ</text>
+                <text x="692" y="306" font-size="12" fill="#ffffff">• HITL-1: KD &amp; TC xét trùng/nợ/vùng</text>
+                <text x="692" y="323" font-size="12" fill="#ffffff">• HITL-2: Vận hành check POS &amp; KTV</text>
+                <text x="692" y="340" font-size="12" fill="#ffffff">• HITL-3: Trưởng phòng PTKD duyệt</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="export">
+                <rect class="fc-box" x="356" y="258" width="230" height="104" rx="14" fill="rgba(196, 46, 120, 0.78)" stroke="#ffb8da" stroke-width="2" />
+                <text x="368" y="280" font-size="13.5" font-weight="800" fill="#ffe0f0">5. XUẤT (HTML)</text>
+                <line x1="368" y1="288" x2="574" y2="288" stroke="rgba(255,214,235,0.35)" />
+                <text x="368" y="305" font-size="12" fill="#ffffff">• Đóng gói kết quả đã xác minh</text>
+                <text x="368" y="322" font-size="12" fill="#ffffff">• Kèm JSON, CSV, MD &amp; Audit</text>
+                <text x="368" y="339" font-size="12" fill="#ffffff">• Phát hành qua Web Server</text>
+                <text x="368" y="354" font-size="12" font-weight="700" fill="#ffd6eb">→ localhost:8055 (Zero-install)</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="bc">
+                <rect class="fc-box" x="16" y="242" width="278" height="68" rx="12" fill="rgba(16, 120, 90, 0.65)" stroke="#6ee7b7" stroke-width="2" />
+                <text x="28" y="263" font-size="13" font-weight="800" fill="#a7f3d0">BC — Báo cáo Chi tiết</text>
+                <text x="28" y="281" font-size="12" fill="#ffffff">• Bảng 3 khu vực &amp; DS ngoại lệ</text>
+                <text x="28" y="298" font-size="12" fill="#ffffff">• Hồ sơ căn cứ &amp; Bản nháp Email</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="dashboard">
+                <rect class="fc-box" x="16" y="324" width="278" height="68" rx="12" fill="rgba(196, 46, 120, 0.78)" stroke="#ffc4e0" stroke-width="2" />
+                <text x="28" y="345" font-size="13" font-weight="800" fill="#ffe0f0">Dashboard — Melody Pink Glass</text>
+                <text x="28" y="363" font-size="12" fill="#ffffff">• Bento KPI &amp; Biểu đồ Thực chứng</text>
+                <text x="28" y="380" font-size="12" fill="#ffffff">• Audit Log &amp; Bộ Test 10/10</text>
+              </g>
+
+              <g class="fc-node" data-fc-id="feedback">
+                <rect class="fc-box" x="676" y="392" width="284" height="62" rx="12" fill="rgba(155, 85, 25, 0.72)" stroke="#fde047" stroke-width="2" />
+                <text x="688" y="413" font-size="13" font-weight="800" fill="#fef08a">FEEDBACK (Bổ sung &amp; Chạy lại)</text>
+                <text x="688" y="431" font-size="12" fill="#ffffff">• Giao kế hoạch KD / VH / TC</text>
+                <text x="688" y="446" font-size="12" fill="#fef08a">→ Bổ sung xác minh → Process</text>
+              </g>
+            </svg>
+          </div>
+
+          <div id="flowchartInfoBox" class="flowchart-info-box"></div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-header">
+            <h3 class="card-title">Bảng tham số &amp; đối chiếu từng bước trên Lưu đồ</h3>
+          </div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Khối quy trình</th>
+                  <th>Dữ liệu / Công cụ / Quy tắc áp dụng</th>
+                  <th>Nhánh OK</th>
+                  <th>Nhánh KO &amp; Vòng lặp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Lark Base</strong></td>
+                  <td>5 nguồn (~30 HS/tháng, 3 khu vực): <code>applicants</code> + <code>dossiers/*.txt</code>, <code>existing_partners</code>, <code>existing_pos</code>, <code>verification_results</code>, <code>rules_config.json</code> &amp; <code>schema_mapping.json</code>. Ghi SHA-256.</td>
+                  <td><span class="badge badge-ok">OK → Cleaning</span></td>
+                  <td><span class="badge badge-err">KO → Lỗi → Lark Base</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2. Cleaning</strong></td>
+                  <td><code>tool_load_and_extract_dossier</code>: ánh xạ bí danh Anh/Việt, trích văn bản kèm <code>evidence_quotes</code>, chuẩn hóa không dấu/đơn vị, tách <code>missing_fields</code>.</td>
+                  <td><span class="badge badge-ok">OK → Process</span></td>
+                  <td><span class="badge badge-err">KO → Lỗi → Lark Base</span></td>
+                </tr>
+                <tr>
+                  <td><strong>3. Process</strong></td>
+                  <td><strong>Skill 1–3 &amp; 7 Tools</strong> (LLM / Local): đối chiếu MST, tên ≥82%, GPS ≤5.0 km, cổng ≥40m2 / ≥1 KTV / ≥150tr, công nợ ≤30 ngày / ≤500tr / ≤5%, chấm 4 tiêu chí (25-30-20-25) có trần thực chứng, cảnh báo cam kết ≥400tr, audit <code>.jsonl</code>.</td>
+                  <td><span class="badge badge-ok">→ Verify</span></td>
+                  <td>Nhận vòng lặp từ <strong>Feedback</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>4. Verify</strong></td>
+                  <td>Kiểm tra bất biến cấm <code>Tiếp tục</code> khi còn <code>IDENTITY_DUPLICATE</code>, <code>TERRITORY_CONFLICT</code>, <code>POLICY_EXCEEDED</code>, <code>MISSING_EVIDENCE</code> + kiểm soát <strong>HITL-1/2/3</strong> (KD – VH – TC – Trưởng phòng PTKD).</td>
+                  <td><span class="badge badge-ok">OK → Xuất (html)</span></td>
+                  <td><span class="badge badge-warn">KO → Feedback → Process</span></td>
+                </tr>
+                <tr>
+                  <td><strong>5. Xuất (html) → BC &amp; Dashboard</strong></td>
+                  <td>Phát hành qua Web Server (<code>http://localhost:8055/</code>): báo cáo <code>bang_de_xuat_khu_vuc.csv</code>, <code>bao_cao_tong_hop.md</code>, bản nháp Email (<strong>BC</strong>) &amp; Web App Melody Hồng (<strong>Dashboard</strong>) + kiểm thử 10/10 PASS.</td>
+                  <td><span class="badge badge-ok">Bàn giao PTKD</span></td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB CREATE DOSSIER ==================== -->
+      <section id="tab-create" class="tab-panel">
+        <div class="grid-2">
+          <!-- Left Card: Structured Form + Quick Presets -->
+          <div class="glass-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">＋ Tạo Hồ Sơ Đối Tác Mới</h3>
+                <div class="muted-text" style="font-size:0.8rem; margin-top:3px;">
+                  Nhập thông tin ứng viên mới (hoặc dùng mẫu nhanh) để lưu vào bộ dữ liệu riêng và chạy AI Agent thẩm định ngay.
+                </div>
+              </div>
+            </div>
+
+            <div class="preset-pills-row">
+              <button type="button" id="presetCompliantBtn" class="btn btn-sm btn-pink-glass-cta">✨ Mẫu Đạt chuẩn (P1)</button>
+              <button type="button" id="presetUnverifiedBtn" class="btn btn-sm btn-pink-pill-light">⚠️ Thiếu chứng từ &amp; Cam kết cao</button>
+              <button type="button" id="presetConflictBtn" class="btn btn-sm btn-pink-pill-light">🚧 Vượt công nợ &amp; Xung đột 5km</button>
+              <button type="button" id="presetClearBtn" class="btn btn-sm btn-glass-subtle">🧹 Xóa trắng form</button>
+            </div>
+
+            <div class="form-section-box upload-zone-box">
+              <div class="form-section-title">📂 Tải lên tệp hồ sơ &amp; Minh chứng đính kèm</div>
+              <div class="upload-dropzone" id="createDossierDropzone">
+                <div class="upload-dropzone-inner">
+                  <div class="upload-icon-circle">📄</div>
+                  <div class="upload-dropzone-info">
+                    <div style="font-weight:700; font-size:0.84rem; color:#ffffff;">Kéo thả file vào đây hoặc bấm chọn file</div>
+                    <div class="muted-text" style="font-size:0.75rem; margin-top:2px;">
+                      • Nạp hồ sơ <code>.txt</code> / <code>.json</code> / <code>.csv</code>: Hệ thống tự trích xuất thông tin điền form<br>
+                      • Tệp đính kèm <code>.pdf</code> / <code>.png</code> / <code>.jpg</code> / <code>.docx</code>: BCTC, Hợp đồng, Mặt bằng, KTV...
+                    </div>
+                  </div>
+                  <div class="upload-btn-group">
+                    <label class="btn btn-sm btn-pink-glass-cta" style="cursor:pointer;" title="Chọn file .txt, .json hoặc .csv để tự động điền form">
+                      ＋ Nạp file hồ sơ (.txt, .json, .csv)
+                      <input type="file" id="cfDossierFileInput" accept=".txt,.json,.csv" style="display:none;" />
+                    </label>
+                    <label class="btn btn-sm btn-pink-pill-light" style="cursor:pointer;" title="Đính kèm tài liệu minh chứng như BCTC, ảnh điểm bán, hợp đồng...">
+                      📎 Đính kèm tệp minh chứng
+                      <input type="file" id="cfAttachmentsInput" multiple accept=".pdf,.png,.jpg,.jpeg,.webp,.docx,.xlsx,.txt" style="display:none;" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div id="cfLoadedFileBadge" class="loaded-file-badge hidden"></div>
+              <div id="cfAttachmentsList" class="attachments-chips-wrap"></div>
+            </div>
+
+            <div class="form-section-box">
+              <div class="form-section-title">1. Nơi lưu bộ dữ liệu (Bảo vệ dữ liệu chuẩn)</div>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label class="form-label" for="createDatasetName">Tên bộ dữ liệu lưu hồ sơ</label>
+                  <input id="createDatasetName" type="text" class="glass-input" value="custom_dossiers" placeholder="vd: custom_dossiers" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="createBaseDataset">Đối tác &amp; Điểm bán tham chiếu</label>
+                  <select id="createBaseDataset" class="glass-select">
+                    <option value="sample_exam_pack">sample_exam_pack (DT001–DT005, POS001–POS006)</option>
+                  </select>
+                </div>
+                <div class="form-field full">
+                  <label class="glass-check-row">
+                    <input id="createIncludeSampleChk" type="checkbox" />
+                    <span>Gộp kèm 10 hồ sơ mẫu (HS001–HS010) nếu bộ dữ liệu chưa tồn tại</span>
+                  </label>
+                  <label class="glass-check-row" style="margin-top:4px;">
+                    <input id="createOverwriteChk" type="checkbox" />
+                    <span>Cho phép ghi đè nếu Mã hồ sơ đã tồn tại trong bộ dữ liệu này</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section-box">
+              <div class="form-section-title">2. Định danh &amp; Thông tin liên hệ</div>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label class="form-label" for="cfApplicantId">Mã hồ sơ *</label>
+                  <input id="cfApplicantId" type="text" class="glass-input" value="HS001" placeholder="vd: HS011" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfSubmittedAt">Ngày nộp hồ sơ</label>
+                  <input id="cfSubmittedAt" type="date" class="glass-input" value="2026-11-12" />
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="cfPartnerName">Tên đối tác / Doanh nghiệp *</label>
+                  <input id="cfPartnerName" type="text" class="glass-input" placeholder="vd: Công ty TNHH Gia dụng Hồng Phát" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfTaxId">Mã số thuế (MST)</label>
+                  <input id="cfTaxId" type="text" class="glass-input" placeholder="vd: 0109991122 (để trống nếu thiếu)" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfRepresentative">Người đại diện</label>
+                  <input id="cfRepresentative" type="text" class="glass-input" placeholder="vd: Nguyễn Minh Anh" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfPhone">Điện thoại</label>
+                  <input id="cfPhone" type="text" class="glass-input" placeholder="vd: 0918889900" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfEmail">Email liên hệ</label>
+                  <input id="cfEmail" type="email" class="glass-input" placeholder="vd: lienhe@hongphat.vn" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section-box">
+              <div class="form-section-title">3. Khu vực &amp; Địa bàn Điểm bán (POS)</div>
+              <div class="form-grid-3">
+                <div class="form-field">
+                  <label class="form-label" for="cfRegion">Khu vực</label>
+                  <select id="cfRegion" class="glass-select">
+                    <option value="Miền Bắc">Miền Bắc</option>
+                    <option value="Miền Trung">Miền Trung</option>
+                    <option value="Miền Nam">Miền Nam</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfProvince">Tỉnh / Thành phố</label>
+                  <input id="cfProvince" type="text" class="glass-input" placeholder="vd: Hà Nội" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfDistrict">Quận / Huyện</label>
+                  <input id="cfDistrict" type="text" class="glass-input" placeholder="vd: Hà Đông" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfWard">Phường / Xã</label>
+                  <input id="cfWard" type="text" class="glass-input" placeholder="vd: Mộ Lao" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfLatitude">Vĩ độ (Latitude)</label>
+                  <input id="cfLatitude" type="text" class="glass-input" placeholder="vd: 20.9719" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfLongitude">Kinh độ (Longitude)</label>
+                  <input id="cfLongitude" type="text" class="glass-input" placeholder="vd: 105.7764" />
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="cfPosAddress">Địa chỉ điểm bán chi tiết</label>
+                  <input id="cfPosAddress" type="text" class="glass-input" placeholder="vd: 88 Trần Phú, Mộ Lao, Hà Đông, Hà Nội" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section-box" style="margin-bottom:0;">
+              <div class="form-section-title">4. Năng lực Trưng bày – Bảo hành – Thương mại</div>
+              <div class="form-grid-3">
+                <div class="form-field">
+                  <label class="form-label" for="cfAreaM2">Diện tích showroom (m²)</label>
+                  <input id="cfAreaM2" type="number" min="0" step="1" class="glass-input" placeholder="vd: 120 (>=40)" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfTechCount">Số KTV bảo hành</label>
+                  <input id="cfTechCount" type="number" min="0" step="1" class="glass-input" placeholder="vd: 3 (>=1)" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfPurchaseM">Kế hoạch nhập (tr/tháng)</label>
+                  <input id="cfPurchaseM" type="number" min="0" step="1" class="glass-input" placeholder="vd: 380 (>=150)" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfCreditDays">Công nợ yêu cầu (ngày)</label>
+                  <input id="cfCreditDays" type="number" min="0" step="1" class="glass-input" placeholder="vd: 30 (<=30)" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfCreditLimit">Hạn mức CN (triệu)</label>
+                  <input id="cfCreditLimit" type="number" min="0" step="1" class="glass-input" placeholder="vd: 380 (<=500)" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="cfMarketingPct">Hỗ trợ thương mại (%)</label>
+                  <input id="cfMarketingPct" type="number" min="0" step="0.1" class="glass-input" placeholder="vd: 4 (<=5%)" />
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="cfWarrantyNotes">Mô tả năng lực bảo hành</label>
+                  <input id="cfWarrantyNotes" type="text" class="glass-input" placeholder="vd: Trạm kỹ thuật riêng 3 KTV, bảo hành tại nhà 15 km" />
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="cfNotes">Ghi chú &amp; chứng từ đính kèm</label>
+                  <input id="cfNotes" type="text" class="glass-input" placeholder="vd: Đã nộp BCTC 2025, hợp đồng thuê mặt bằng 3 năm" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Card: Independent Verification + Live .txt Preview + Saved List -->
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div class="glass-card" style="margin-bottom:0;">
+              <div class="card-header">
+                <h3 class="card-title">5. Trạng thái Xác minh Độc lập &amp; Nội dung Văn bản</h3>
+              </div>
+
+              <div class="preset-pills-row">
+                <button type="button" id="verAllPassBtn" class="btn btn-sm btn-pink-glass-cta">✓ Đủ bằng chứng (VERIFIED_PASS)</button>
+                <button type="button" id="verPendingBtn" class="btn btn-sm btn-pink-pill-light">⏳ Chờ xác minh (PENDING)</button>
+                <button type="button" id="verNoneBtn" class="btn btn-sm btn-glass-subtle">✕ Chưa có phiếu xác minh</button>
+              </div>
+
+              <label class="glass-check-row" style="margin-bottom:10px;">
+                <input id="cfIncludeVerification" type="checkbox" checked />
+                <span>Ghi dòng kết quả vào <code>verification_results.csv</code> (bỏ tích để mô phỏng hồ sơ chưa xác minh)</span>
+              </label>
+
+              <div id="cfVerificationFields" class="form-section-box">
+                <div class="form-grid-2">
+                  <div class="form-field">
+                    <label class="form-label" for="cfVerIdentity">Xác minh danh tính</label>
+                    <select id="cfVerIdentity" class="glass-select">
+                      <option value="VERIFIED_PASS">VERIFIED_PASS</option>
+                      <option value="PENDING">PENDING</option>
+                      <option value="NOT_SUBMITTED">NOT_SUBMITTED</option>
+                      <option value="VERIFIED_FAIL">VERIFIED_FAIL</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="cfVerPos">Xác minh điểm bán (POS)</label>
+                    <select id="cfVerPos" class="glass-select">
+                      <option value="VERIFIED_PASS">VERIFIED_PASS</option>
+                      <option value="PENDING">PENDING</option>
+                      <option value="NOT_SUBMITTED">NOT_SUBMITTED</option>
+                      <option value="VERIFIED_FAIL">VERIFIED_FAIL</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="cfVerWarranty">Xác minh bảo hành</label>
+                    <select id="cfVerWarranty" class="glass-select">
+                      <option value="VERIFIED_PASS">VERIFIED_PASS</option>
+                      <option value="PENDING">PENDING</option>
+                      <option value="NOT_SUBMITTED">NOT_SUBMITTED</option>
+                      <option value="VERIFIED_FAIL">VERIFIED_FAIL</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="cfVerFinancial">Xác minh tài chính</label>
+                    <select id="cfVerFinancial" class="glass-select">
+                      <option value="VERIFIED_PASS">VERIFIED_PASS</option>
+                      <option value="PENDING">PENDING</option>
+                      <option value="NOT_SUBMITTED">NOT_SUBMITTED</option>
+                      <option value="VERIFIED_FAIL">VERIFIED_FAIL</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="cfVerifiedBy">Bộ phận xác minh</label>
+                    <input id="cfVerifiedBy" type="text" class="glass-input" value="Kinh doanh + Vận hành + Tài chính" />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="cfVerNotes">Ghi chú xác minh thực tế</label>
+                    <input id="cfVerNotes" type="text" class="glass-input" placeholder="vd: Đã khảo sát thực địa showroom & kiểm tra BCTC" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section-box">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
+                  <div class="form-section-title" style="margin:0;">Bản xem trước file <code>dossiers/&lt;Mã_HS&gt;.txt</code></div>
+                  <label class="glass-check-row" style="font-size:0.75rem;">
+                    <input id="cfManualRawChk" type="checkbox" />
+                    <span>Tự sửa văn bản thô</span>
+                  </label>
+                </div>
+                <textarea id="cfRawTextPreview" class="glass-textarea" rows="10" readonly placeholder="Nội dung hồ sơ dạng văn bản sẽ tự sinh theo biểu mẫu..."></textarea>
+              </div>
+
+              <div class="create-actions-bar">
+                <button type="button" id="createAndRunBtn" class="btn btn-pink-glass-cta">✦ Lưu hồ sơ &amp; Chạy AI Agent ngay</button>
+                <button type="button" id="createOnlyBtn" class="btn btn-pink-pill-light">💾 Chỉ lưu vào bộ dữ liệu</button>
+              </div>
+              <div id="createStatusBanner" class="alert-box alert-info hidden" style="margin-top:12px; margin-bottom:0;"></div>
+            </div>
+
+            <div class="glass-card" style="margin-bottom:0;">
+              <div class="card-header">
+                <h3 class="card-title">Hồ sơ đang có trong <code id="customDatasetLabel">custom_dossiers</code> (<span id="customDatasetCount">0</span>)</h3>
+                <button type="button" id="refreshCustomListBtn" class="btn btn-sm btn-glass-subtle">↻ Làm mới</button>
+              </div>
+              <div id="customDatasetDossiersList" class="custom-dossier-list">
+                <div class="empty-card-hint">Bộ dữ liệu chưa có hồ sơ nào. Tạo hồ sơ đầu tiên ở bên trái!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB REGIONAL -->
+      <section id="tab-regional" class="tab-panel">
+        <div id="regionalContainer">
+          <div class="glass-card">Hãy nhấn <strong>Chạy AI Agent</strong> ở thanh trên để bắt đầu phân tích hồ sơ.</div>
+        </div>
+      </section>
+
+      <!-- TAB DOSSIERS & DRAFTS -->
+      <section id="tab-dossiers" class="tab-panel">
+        <div class="split-layout">
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title">Danh sách ứng viên</h3>
+              <button type="button" id="dossiersCreateBtn" class="btn btn-sm btn-pink-glass-cta">＋ Tạo mới</button>
+            </div>
+            <div id="dossierList" class="dossier-list"></div>
+          </div>
+          <div id="dossierDetail" class="glass-card">
+            <p class="muted-text">Chọn một hồ sơ bên trái để xem căn cứ, điểm số, điều kiện chưa đạt, thông tin cần xác minh và bản nháp trao đổi.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB ESCALATIONS -->
+      <section id="tab-escalations" class="tab-panel">
+        <div class="alert-box alert-warn">
+          <strong>Nguyên tắc kiểm soát:</strong> Các trường hợp <em>xung đột địa bàn bảo hộ</em>, <em>trùng đối tác hệ thống</em>, <em>vượt chính sách công nợ/thương mại</em>, hoặc <em>cam kết sản lượng cao nhưng thiếu bằng chứng xác minh độc lập</em> được tách riêng để chuyển người có thẩm quyền phê duyệt — AI Agent không tự coi cam kết là kết quả đã xác minh.
+        </div>
+        <div id="escalationsContainer"></div>
+      </section>
+
+      <!-- TAB VERIFICATION PLAN -->
+      <section id="tab-verification" class="tab-panel">
+        <div class="glass-card">
+          <div class="card-header">
+            <h3 class="card-title">Kế hoạch phối hợp xác minh với Kinh doanh – Vận hành – Tài chính</h3>
+            <select id="deptFilter" class="glass-select">
+              <option value="ALL">Tất cả bộ phận</option>
+              <option value="Bộ phận Kinh doanh">Bộ phận Kinh doanh</option>
+              <option value="Bộ phận Vận hành">Bộ phận Vận hành</option>
+              <option value="Bộ phận Tài chính">Bộ phận Tài chính</option>
+            </select>
+          </div>
+          <div id="verificationContainer"></div>
+        </div>
+      </section>
+
+      <!-- TAB AUDIT LOGS -->
+      <section id="tab-logs" class="tab-panel">
+        <div class="glass-card">
+          <div class="card-header">
+            <h3 class="card-title">Nhật ký truy vết dữ liệu, quy tắc &amp; gọi công cụ (Audit Trail)</h3>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <select id="logApplicantFilter" class="glass-select"><option value="ALL">Tất cả hồ sơ</option></select>
+              <select id="logEventFilter" class="glass-select">
+                <option value="ALL">Tất cả sự kiện</option>
+                <option value="DATA_LOADED">DATA_LOADED</option>
+                <option value="SKILL_STEP">SKILL_STEP</option>
+                <option value="TOOL_RESULT">TOOL_RESULT</option>
+                <option value="LLM_REQUEST">LLM_REQUEST</option>
+                <option value="LLM_FALLBACK">LLM_FALLBACK</option>
+              </select>
+            </div>
+          </div>
+          <div id="logsContainer"></div>
+        </div>
+      </section>
+
+      <!-- TAB EXAM DATASET & RULES -->
+      <section id="tab-exam" class="tab-panel">
+        <div class="grid-2">
+          <div class="glass-card">
+            <div class="card-header"><h3 class="card-title">Nạp bộ dữ liệu mới tại buổi thi (Không sửa dữ liệu gốc)</h3></div>
+            <p class="muted-text" style="font-size:0.86rem;">
+              Chọn thư mục hoặc nhiều file dữ liệu mới từ giảng viên (<code>applicants.json</code> / <code>.csv</code>, <code>existing_partners.csv</code>, <code>existing_pos.csv</code>, <code>verification_results.csv</code> và thư mục <code>dossiers/*.txt</code> nếu có). Hệ thống lưu nguyên bản vào thư mục upload riêng, ghi mã băm SHA-256 và chạy trực tiếp AI Agent.
+            </p>
+            <div class="dropzone" id="examDropzone">
+              <p><strong>Kéo thả / Chọn thư mục bộ dữ liệu thi</strong> hoặc chọn nhiều file cùng lúc</p>
+              <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:10px;">
+                <label class="btn btn-pink-pill-light" style="cursor:pointer;">
+                  Chọn thư mục dataset
+                  <input id="examFolderInput" type="file" webkitdirectory multiple style="display:none;" />
+                </label>
+                <label class="btn btn-glass-subtle" style="cursor:pointer;">
+                  Chọn các file lẻ
+                  <input id="examFilesInput" type="file" multiple style="display:none;" />
+                </label>
+              </div>
+              <div id="uploadedFilesPreview" class="muted-text" style="margin-top:12px; font-size:0.82rem;">Chưa chọn file nào.</div>
+            </div>
+            <button id="runUploadedBtn" class="btn btn-pink-glass-cta" disabled>Nạp &amp; Chạy trực tiếp dữ liệu thi</button>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-header">
+              <h3 class="card-title">Cấu hình Quy tắc nghiệp vụ (<code>rules_config.json</code>)</h3>
+              <button id="saveRulesBtn" class="btn btn-pink-pill-light btn-sm">Lưu cấu hình quy tắc</button>
+            </div>
+            <p class="muted-text" style="font-size:0.83rem; margin-top:0;">
+              Chỉnh ngưỡng công nợ, bán kính bảo hộ, trọng số tiêu chí hoặc ngưỡng điểm cắt khi giảng viên công bố quy tắc mới.
+            </p>
+            <textarea id="rulesEditor" class="code-editor"></textarea>
+
+            <div class="card-header" style="margin-top:18px;">
+              <h3 class="card-title">Ánh xạ Cấu trúc Dữ liệu (<code>schema_mapping.json</code>)</h3>
+              <button id="saveSchemaBtn" class="btn btn-pink-pill-light btn-sm">Lưu ánh xạ schema</button>
+            </div>
+            <p class="muted-text" style="font-size:0.83rem; margin-top:0;">
+              Thêm bí danh tên cột/trường nếu bộ dữ liệu thi đặt tên cột khác mặc định.
+            </p>
+            <textarea id="schemaEditor" class="code-editor" style="min-height:180px;"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB TESTS -->
+      <section id="tab-tests" class="tab-panel">
+        <div class="glass-card">
+          <div class="card-header">
+            <h3 class="card-title">Kết quả tự kiểm thử (Trường hợp thông thường – Thiếu dữ liệu – Ranh giới quy tắc)</h3>
+            <button id="runTestsTabBtn" class="btn btn-pink-glass-cta">Chạy lại toàn bộ Test Suite</button>
+          </div>
+          <div id="testsContainer">
+            <p class="muted-text">Nhấn <strong>Kiểm thử 10/10</strong> để chạy bộ assertions tự động trên 3 nhóm kịch bản.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

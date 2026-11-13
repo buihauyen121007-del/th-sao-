@@ -1,0 +1,648 @@
+{
+    "run_id":  "run_20261113_074515",
+    "executed_at":  "2026-11-13T00:45:17.4541618+00:00",
+    "execution_mode":  "local_agent_orchestrator",
+    "data_dir":  "C:\\Users\\Admin\\Downloads\\hi\\data\\custom_dossiers",
+    "rules_version":  "1.0",
+    "summary":  {
+                    "generated_at":  "2026-11-13T00:45:17.4218433+00:00",
+                    "total_applicants":  1,
+                    "continue_count":  0,
+                    "supplement_count":  1,
+                    "not_continue_count":  0,
+                    "escalation_count":  1,
+                    "regional_summary":  [
+                                             {
+                                                 "region":  "Miền Bắc",
+                                                 "total":  1,
+                                                 "continue_count":  0,
+                                                 "supplement_count":  1,
+                                                 "not_continue_count":  0,
+                                                 "escalation_count":  1,
+                                                 "partners":  [
+                                                                  {
+                                                                      "applicant_id":  "HS001",
+                                                                      "partner_name":  "ê nhỏ lớp trưởng",
+                                                                      "province_district":  "Bắc Ning, Lào Cai",
+                                                                      "claimed_score":  86,
+                                                                      "verified_score":  86,
+                                                                      "priority":  "P3 - Theo dõi / Bổ sung",
+                                                                      "recommendation":  "Bổ sung",
+                                                                      "recommendation_code":  "SUPPLEMENT",
+                                                                      "requires_escalation":  true,
+                                                                      "escalation_codes":  [
+                                                                                               "MISSING_EVIDENCE"
+                                                                                           ],
+                                                                      "unverified_high_commitment":  false
+                                                                  }
+                                                              ]
+                                             },
+                                             {
+                                                 "region":  "Miền Trung",
+                                                 "total":  0,
+                                                 "continue_count":  0,
+                                                 "supplement_count":  0,
+                                                 "not_continue_count":  0,
+                                                 "escalation_count":  0,
+                                                 "partners":  [
+
+                                                              ]
+                                             },
+                                             {
+                                                 "region":  "Miền Nam",
+                                                 "total":  0,
+                                                 "continue_count":  0,
+                                                 "supplement_count":  0,
+                                                 "not_continue_count":  0,
+                                                 "escalation_count":  0,
+                                                 "partners":  [
+
+                                                              ]
+                                             }
+                                         ],
+                    "escalation_register":  [
+                                                {
+                                                    "applicant_id":  "HS001",
+                                                    "partner_name":  "ê nhỏ lớp trưởng",
+                                                    "region":  "Miền Bắc",
+                                                    "recommendation":  "Bổ sung",
+                                                    "verified_score":  86,
+                                                    "claimed_score":  86,
+                                                    "escalations":  [
+                                                                        {
+                                                                            "code":  "MISSING_EVIDENCE",
+                                                                            "label":  "Thiếu bằng chứng xác minh / Chưa kiểm chứng cam kết",
+                                                                            "escalate_to":  "Bộ phận Vận hành / Kinh doanh / Tài chính (xác minh thực tế)",
+                                                                            "detail":  "Thiếu Mã số thuế để đối chiếu danh tính pháp nhân"
+                                                                        }
+                                                                    ]
+                                                }
+                                            ],
+                    "verification_plan":  [
+                                              {
+                                                  "department":  "Bộ phận Kinh doanh",
+                                                  "applicant_id":  "HS001",
+                                                  "partner_name":  "ê nhỏ lớp trưởng",
+                                                  "region":  "Miền Bắc",
+                                                  "current_status":  "Bổ sung",
+                                                  "task":  "Thu thập bổ sung dữ liệu còn thiếu trong hồ sơ ứng viên (Thiếu Mã số thuế để đối chiếu danh tính pháp nhân)",
+                                                  "priority":  "P3 - Theo dõi / Bổ sung"
+                                              }
+                                          ]
+                },
+    "applicants":  [
+                       {
+                           "profile":  {
+                                           "applicant_id":  "HS001",
+                                           "submitted_at":  "2026-11-01",
+                                           "source_files":  [
+                                                                "applicants.json",
+                                                                "dossiers/HS001.txt"
+                                                            ],
+                                           "raw_text_length":  508,
+                                           "raw_text_preview":  "HỒ SƠ ĐĂNG KÝ ĐỐI TÁC PHÂN PHỐI - ĐẠI THÀNH\nMã hồ sơ: HS001\nTên đối tác: ê nhỏ lớp trưởng\nNgười đại diện: Hà Quỳnh dùng giả\nĐiện thoại: 0981727781\nEmail: huhu@gmail.com\nKhu vực: Miền Bắc\nTỉnh/Thành: Lào Cai\nQuận/Huyện: Bắc Ning\nPhường/Xã: Hàn Quốc\nĐịa chỉ điểm bán: HPC landmark\nDiện tích trưng bày: 200 m2\nNăng lực bảo hành: Có 3 kỹ thuật viên; rì viu\nKế hoạch nhập hàng: 100 triệu đồng/tháng\nYêu cầu hỗ trợ thương mại: Công nợ 20 ngày, hạn mức công nợ 300 triệu đồng, hỗ trợ thương mại 2%\nGhi chú: đã nộp\r\n",
+                                           "evidence_quotes":  [
+                                                                   "phone: \"Điện thoại: 0981727781\"",
+                                                                   "email: \"huhu@gmail.com\"",
+                                                                   "representative: \"Người đại diện: Hà Quỳnh dùng giả\"",
+                                                                   "partner_name: \"Tên đối tác: ê nhỏ lớp trưởng\"",
+                                                                   "region: \"Khu vực: Miền Bắc\"",
+                                                                   "province: \"Tỉnh/Thành: Lào Cai\"",
+                                                                   "district: \"Quận/Huyện: Bắc Ning\"",
+                                                                   "ward: \"Phường/Xã: Hàn Quốc\"",
+                                                                   "pos_address: \"Địa chỉ điểm bán: HPC landmark\"",
+                                                                   "showroom_area_m2: \"Diện tích trưng bày: 200 m2\"",
+                                                                   "warranty_technicians: \"3 kỹ thuật viên\"",
+                                                                   "warranty_notes: \"Năng lực bảo hành: Có 3 kỹ thuật viên; rì viu\"",
+                                                                   "monthly_purchase_vnd_million: \"Kế hoạch nhập hàng: 100 triệu\"",
+                                                                   "requested_credit_days: \"Công nợ 20 ngày\"",
+                                                                   "requested_credit_limit_vnd_million: \"hạn mức công nợ 300 triệu\"",
+                                                                   "requested_marketing_support_pct: \"hỗ trợ thương mại 2%\""
+                                                               ],
+                                           "partner_name":  "ê nhỏ lớp trưởng",
+                                           "tax_id":  "",
+                                           "representative":  "Hà Quỳnh dùng giả",
+                                           "phone":  "0981727781",
+                                           "email":  "huhu@gmail.com",
+                                           "region":  "Miền Bắc",
+                                           "province":  "Lào Cai",
+                                           "district":  "Bắc Ning",
+                                           "ward":  "Hàn Quốc",
+                                           "pos_address":  "HPC landmark",
+                                           "warranty_notes":  "rì viu",
+                                           "phone_normalized":  "0981727781",
+                                           "latitude":  null,
+                                           "longitude":  null,
+                                           "showroom_area_m2":  200,
+                                           "warranty_technicians":  3,
+                                           "monthly_purchase_vnd_million":  100,
+                                           "requested_credit_days":  20,
+                                           "requested_credit_limit_vnd_million":  300,
+                                           "requested_marketing_support_pct":  2,
+                                           "missing_fields":  [
+                                                                  "Thiếu Mã số thuế để đối chiếu danh tính pháp nhân",
+                                                                  "Chưa có tọa độ GPS điểm bán (chỉ đối chiếu được theo Quận/Huyện/Phường)"
+                                                              ],
+                                           "verification":  {
+                                                                "record_found":  true,
+                                                                "identity_verified":  "VERIFIED_PASS",
+                                                                "pos_verified":  "VERIFIED_PASS",
+                                                                "warranty_verified":  "VERIFIED_PASS",
+                                                                "financial_verified":  "VERIFIED_PASS",
+                                                                "verified_by":  "Kinh doanh + Vận hành + Tài chính",
+                                                                "verification_date":  "2026-11-01",
+                                                                "verification_notes":  ""
+                                                            }
+                                       },
+                           "identity_territory":  {
+                                                      "identity_status":  "NEW_PARTNER",
+                                                      "identity_matches":  [
+
+                                                                           ],
+                                                      "territory_status":  "CLEAR",
+                                                      "territory_conflicts":  [
+
+                                                                              ],
+                                                      "nearest_existing_pos":  null,
+                                                      "gps_check_performed":  false
+                                                  },
+                           "gates":  {
+                                         "mandatory_passed":  false,
+                                         "failed_conditions":  [
+                                                                   "Không đạt điều kiện bắt buộc: Chưa có Mã số thuế hợp lệ",
+                                                                   "Chưa đạt kế hoạch nhập hàng tối thiểu (100 triệu \u003c 150 triệu/tháng)"
+                                                               ],
+                                         "policy_compliant":  true,
+                                         "policy_violations":  [
+
+                                                               ],
+                                         "all_independent_verified":  true,
+                                         "unverified_dimensions":  [
+
+                                                                   ],
+                                         "unverified_high_commitment_warning":  false,
+                                         "commitment_note":  ""
+                                     },
+                           "scoring":  {
+                                           "claimed_score":  86,
+                                           "verified_score":  86,
+                                           "breakdown":  [
+                                                             {
+                                                                 "id":  "C1_POS_COVERAGE",
+                                                                 "weight":  25,
+                                                                 "claimed":  25,
+                                                                 "verified":  25,
+                                                                 "evidence_status":  "VERIFIED_PASS"
+                                                             },
+                                                             {
+                                                                 "id":  "C2_WARRANTY_SERVICE",
+                                                                 "weight":  30,
+                                                                 "claimed":  30,
+                                                                 "verified":  30,
+                                                                 "evidence_status":  "VERIFIED_PASS"
+                                                             },
+                                                             {
+                                                                 "id":  "C3_PURCHASE_PLAN",
+                                                                 "weight":  20,
+                                                                 "claimed":  6,
+                                                                 "verified":  6,
+                                                                 "evidence_status":  "VERIFIED_PASS"
+                                                             },
+                                                             {
+                                                                 "id":  "C4_FINANCIAL_COMPLIANCE",
+                                                                 "weight":  25,
+                                                                 "claimed":  25,
+                                                                 "verified":  25,
+                                                                 "evidence_status":  "VERIFIED_PASS"
+                                                             }
+                                                         ]
+                                       },
+                           "decision":  {
+                                            "recommendation_code":  "SUPPLEMENT",
+                                            "recommendation_label":  "Bổ sung",
+                                            "priority_code":  "P3",
+                                            "priority_label":  "P3 - Theo dõi / Bổ sung",
+                                            "requires_human_escalation":  true,
+                                            "escalation_codes":  [
+                                                                     "MISSING_EVIDENCE"
+                                                                 ],
+                                            "escalations":  [
+                                                                {
+                                                                    "code":  "MISSING_EVIDENCE",
+                                                                    "label":  "Thiếu bằng chứng xác minh / Chưa kiểm chứng cam kết",
+                                                                    "escalate_to":  "Bộ phận Vận hành / Kinh doanh / Tài chính (xác minh thực tế)",
+                                                                    "detail":  "Thiếu Mã số thuế để đối chiếu danh tính pháp nhân"
+                                                                }
+                                                            ],
+                                            "verification_tasks":  [
+                                                                       {
+                                                                           "department":  "Bộ phận Kinh doanh",
+                                                                           "task":  "Thu thập bổ sung dữ liệu còn thiếu trong hồ sơ ứng viên (Thiếu Mã số thuế để đối chiếu danh tính pháp nhân)"
+                                                                       }
+                                                                   ],
+                                            "failed_and_conflict_items":  [
+                                                                              "Không đạt điều kiện bắt buộc: Chưa có Mã số thuế hợp lệ",
+                                                                              "Chưa đạt kế hoạch nhập hàng tối thiểu (100 triệu \u003c 150 triệu/tháng)"
+                                                                          ],
+                                            "unknown_or_missing_items":  [
+                                                                             "Thiếu Mã số thuế để đối chiếu danh tính pháp nhân",
+                                                                             "Chưa có tọa độ GPS điểm bán (chỉ đối chiếu được theo Quận/Huyện/Phường)"
+                                                                         ],
+                                            "evidence_basis":  [
+                                                                   "phone: \"Điện thoại: 0981727781\"",
+                                                                   "email: \"huhu@gmail.com\"",
+                                                                   "representative: \"Người đại diện: Hà Quỳnh dùng giả\"",
+                                                                   "partner_name: \"Tên đối tác: ê nhỏ lớp trưởng\"",
+                                                                   "region: \"Khu vực: Miền Bắc\"",
+                                                                   "province: \"Tỉnh/Thành: Lào Cai\"",
+                                                                   "district: \"Quận/Huyện: Bắc Ning\"",
+                                                                   "ward: \"Phường/Xã: Hàn Quốc\"",
+                                                                   "pos_address: \"Địa chỉ điểm bán: HPC landmark\"",
+                                                                   "showroom_area_m2: \"Diện tích trưng bày: 200 m2\"",
+                                                                   "warranty_technicians: \"3 kỹ thuật viên\"",
+                                                                   "warranty_notes: \"Năng lực bảo hành: Có 3 kỹ thuật viên; rì viu\"",
+                                                                   "monthly_purchase_vnd_million: \"Kế hoạch nhập hàng: 100 triệu\"",
+                                                                   "requested_credit_days: \"Công nợ 20 ngày\"",
+                                                                   "requested_credit_limit_vnd_million: \"hạn mức công nợ 300 triệu\"",
+                                                                   "requested_marketing_support_pct: \"hỗ trợ thương mại 2%\"",
+                                                                   "Verification (Kinh doanh + Vận hành + Tài chính - 2026-11-01): "
+                                                               ]
+                                        },
+                           "draft":  {
+                                         "applicant_id":  "HS001",
+                                         "to_email":  "huhu@gmail.com",
+                                         "subject":  "[Đại Thành] Đề nghị bổ sung hồ sơ \u0026 phối hợp xác minh - ê nhỏ lớp trưởng (HS001)",
+                                         "body":  "Kính gửi Quý đối tác ê nhỏ lớp trưởng (Người đại diện: Hà Quỳnh dùng giả),\n\nPhòng Phát triển Kinh doanh - Công ty Thiết bị Gia dụng Đại Thành đã tiếp nhận hồ sơ đăng ký đối tác HS001 tại khu vực Miền Bắc.\n\nĐể có đủ cơ sở trình Trưởng phòng Phát triển Kinh doanh và các bộ phận chuyên môn xem xét, kính đề nghị Quý đối tác phối hợp bổ sung/làm rõ các nội dung sau:\n\n1. Các điều kiện chưa đạt hoặc cần điều chỉnh theo chính sách:\n- Không đạt điều kiện bắt buộc: Chưa có Mã số thuế hợp lệ\n- Chưa đạt kế hoạch nhập hàng tối thiểu (100 triệu \u003c 150 triệu/tháng)\n\n2. Thông tin và bằng chứng cần xác minh thêm:\n- [Bộ phận Kinh doanh] Thu thập bổ sung dữ liệu còn thiếu trong hồ sơ ứng viên (Thiếu Mã số thuế để đối chiếu danh tính pháp nhân)\n\nLưu ý: Các cam kết về sản lượng nhập hàng sẽ được ghi nhận cùng kết quả xác minh thực tế năng lực phục vụ khách hàng và chính sách công nợ của Công ty.\n\nVui lòng phản hồi trong vòng 05 ngày làm việc để chúng tôi tiếp tục xử lý hồ sơ.\n\nTrân trọng,\nPhòng Phát triển Kinh doanh - Công ty Thiết bị Gia dụng Đại Thành",
+                                         "generated_by":  "template_grounded_tool"
+                                     }
+                       }
+                   ],
+    "audit_log_count":  15,
+    "audit_logs":  [
+                       {
+                           "seq":  1,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:16.0696461+00:00",
+                           "event_type":  "DATA_LOADED",
+                           "skill_name":  "orchestrator",
+                           "tool_name":  "load_dataset",
+                           "applicant_id":  "ALL",
+                           "tool_args":  {
+                                             "data_dir":  "C:\\Users\\Admin\\Downloads\\hi\\data\\custom_dossiers",
+                                             "mode":  "local_agent_orchestrator"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "DATA_INTEGRITY_HASH"
+                                                ],
+                           "evidence_refs":  [
+                                                 "applicants.json",
+                                                 "existing_partners.csv",
+                                                 "existing_pos.csv",
+                                                 "verification_results.csv"
+                                             ],
+                           "result_summary":  {
+                                                  "applicants_count":  1,
+                                                  "existing_partners_count":  5,
+                                                  "existing_pos_count":  6,
+                                                  "verification_rows_count":  1,
+                                                  "input_hashes":  {
+                                                                       "applicants":  "85e05a140f2ec05895f0972f6d166d6be98937c05870ba868e8e8a74d5ba041a",
+                                                                       "existing_partners":  "b95b9532f6337295cc79f7d72e648d2829b4d4c45155a14d420c5ff199435b93",
+                                                                       "existing_pos":  "3b7a2b5dc8161b3787ecf08a9b63fafc8909d322c8dc9225fb298158a613cf08",
+                                                                       "verification_results":  "932da829e5f32d637a334c51bc0f64445de8da15cdf018e3e09c2c6278c2ede3",
+                                                                       "rules_config":  "b9faab0aecd9d53e2aefc7d9340acfa47a1fba767c06fc7c812692422840ae87"
+                                                                   }
+                                              },
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  2,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:16.1492686+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_identity_territory_screening",
+                           "tool_name":  "tool_load_and_extract_dossier",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Invoking skill tool",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  3,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:16.6918837+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_identity_territory_screening",
+                           "tool_name":  "tool_load_and_extract_dossier",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "SCHEMA_EXTRACTION",
+                                                    "VERIFICATION_JOIN"
+                                                ],
+                           "evidence_refs":  [
+                                                 "applicants.json",
+                                                 "dossiers/HS001.txt"
+                                             ],
+                           "result_summary":  {
+                                                  "partner_name":  "ê nhỏ lớp trưởng",
+                                                  "region":  "Miền Bắc",
+                                                  "missing_fields_count":  2,
+                                                  "verification_record_found":  true
+                                              },
+                           "duration_ms":  476
+                       },
+                       {
+                           "seq":  4,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:16.7010635+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_identity_territory_screening",
+                           "tool_name":  "tool_check_identity_and_territory",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Invoking skill tool",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  5,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.0296697+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_identity_territory_screening",
+                           "tool_name":  "tool_check_identity_and_territory",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "IDENTITY_DEDUP_RULE",
+                                                    "TERRITORY_PROTECTION_RULE"
+                                                ],
+                           "evidence_refs":  [
+                                                 "existing_partners",
+                                                 "existing_pos"
+                                             ],
+                           "result_summary":  {
+                                                  "identity_status":  "NEW_PARTNER",
+                                                  "identity_matches_count":  0,
+                                                  "territory_status":  "CLEAR",
+                                                  "territory_conflicts_count":  0,
+                                                  "nearest_km":  null
+                                              },
+                           "duration_ms":  280
+                       },
+                       {
+                           "seq":  6,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.0296697+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_identity_territory_screening",
+                           "tool_name":  "tool_check_mandatory_and_policy_gates",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Invoking skill tool",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  7,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.1031879+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_identity_territory_screening",
+                           "tool_name":  "tool_check_mandatory_and_policy_gates",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "MANDATORY_GATES",
+                                                    "CREDIT_COMMERCIAL_POLICY",
+                                                    "INDEPENDENT_EVIDENCE_GATE"
+                                                ],
+                           "evidence_refs":  [
+                                                 "rules_config",
+                                                 "verification_results"
+                                             ],
+                           "result_summary":  {
+                                                  "mandatory_passed":  false,
+                                                  "policy_compliant":  true,
+                                                  "all_independent_verified":  true,
+                                                  "unverified_high_commitment_warning":  false
+                                              },
+                           "duration_ms":  54
+                       },
+                       {
+                           "seq":  8,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.1031879+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_scoring_priority_and_escalation",
+                           "tool_name":  "tool_evaluate_criteria_and_priority",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Invoking skill tool",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  9,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.1351777+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_scoring_priority_and_escalation",
+                           "tool_name":  "tool_evaluate_criteria_and_priority",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "WEIGHTED_SCORING_V1",
+                                                    "UNVERIFIED_SCORE_CAP"
+                                                ],
+                           "evidence_refs":  [
+                                                 "evaluation_criteria",
+                                                 "verification_results"
+                                             ],
+                           "result_summary":  {
+                                                  "claimed_score":  86,
+                                                  "verified_score":  86
+                                              },
+                           "duration_ms":  16
+                       },
+                       {
+                           "seq":  10,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.1351777+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_scoring_priority_and_escalation",
+                           "tool_name":  "tool_determine_escalation_and_recommendation",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Invoking skill tool",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  11,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.2464431+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_scoring_priority_and_escalation",
+                           "tool_name":  "tool_determine_escalation_and_recommendation",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "DECISION_MATRIX",
+                                                    "ESCALATION_ROUTING"
+                                                ],
+                           "evidence_refs":  [
+                                                 "gates",
+                                                 "scoring",
+                                                 "identity_territory"
+                                             ],
+                           "result_summary":  {
+                                                  "recommendation":  "Bổ sung",
+                                                  "priority":  "P3 - Theo dõi / Bổ sung",
+                                                  "requires_human_escalation":  true,
+                                                  "escalation_codes":  [
+                                                                           "MISSING_EVIDENCE"
+                                                                       ]
+                                              },
+                           "duration_ms":  82
+                       },
+                       {
+                           "seq":  12,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.2464431+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_reporting_coordination_and_drafting",
+                           "tool_name":  "tool_draft_partner_communication",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001"
+                                         },
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Invoking skill tool",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  13,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.3219806+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_reporting_coordination_and_drafting",
+                           "tool_name":  "tool_draft_partner_communication",
+                           "applicant_id":  "HS001",
+                           "tool_args":  {
+                                             "applicant_id":  "HS001",
+                                             "recommendation_code":  "SUPPLEMENT"
+                                         },
+                           "rule_ids_applied":  [
+                                                    "PARTNER_DRAFT_TEMPLATE"
+                                                ],
+                           "evidence_refs":  [
+                                                 "decision",
+                                                 "messages_vi_templates"
+                                             ],
+                           "result_summary":  {
+                                                  "subject":  "[Đại Thành] Đề nghị bổ sung hồ sơ \u0026 phối hợp xác minh - ê nhỏ lớp trưởng (HS001)",
+                                                  "to_email":  "huhu@gmail.com"
+                                              },
+                           "duration_ms":  53
+                       },
+                       {
+                           "seq":  14,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.3239924+00:00",
+                           "event_type":  "SKILL_STEP",
+                           "skill_name":  "partner_reporting_coordination_and_drafting",
+                           "tool_name":  "tool_generate_regional_summary_and_plan",
+                           "applicant_id":  "ALL",
+                           "tool_args":  null,
+                           "rule_ids_applied":  [
+
+                                                ],
+                           "evidence_refs":  [
+
+                                             ],
+                           "result_summary":  "Aggregating regional tables, escalations, and department verification plan",
+                           "duration_ms":  0
+                       },
+                       {
+                           "seq":  15,
+                           "run_id":  "run_20261113_074515",
+                           "timestamp":  "2026-11-13T00:45:17.4454130+00:00",
+                           "event_type":  "TOOL_RESULT",
+                           "skill_name":  "partner_reporting_coordination_and_drafting",
+                           "tool_name":  "tool_generate_regional_summary_and_plan",
+                           "applicant_id":  "ALL",
+                           "tool_args":  {
+                                             "include_draft_previews":  true
+                                         },
+                           "rule_ids_applied":  [
+                                                    "REGIONAL_GROUPING",
+                                                    "DEPARTMENT_PLAN_ROUTING"
+                                                ],
+                           "evidence_refs":  [
+                                                 "all_applicant_decisions"
+                                             ],
+                           "result_summary":  {
+                                                  "total_applicants":  1,
+                                                  "continue_count":  0,
+                                                  "supplement_count":  1,
+                                                  "not_continue_count":  0,
+                                                  "escalation_count":  1,
+                                                  "verification_tasks_count":  1
+                                              },
+                           "duration_ms":  78
+                       }
+                   ]
+}

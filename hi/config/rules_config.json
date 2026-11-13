@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "company_name": "Công ty Thiết bị Gia dụng Đại Thành",
+  "regions": [
+    "Miền Bắc",
+    "Miền Trung",
+    "Miền Nam"
+  ],
+  "territory_policy": {
+    "protection_radius_km": 5.0,
+    "protect_same_district": true,
+    "protect_same_ward": true,
+    "identity_name_similarity_threshold": 0.82
+  },
+  "credit_and_commercial_policy": {
+    "max_credit_days": 30,
+    "max_credit_limit_vnd_million": 500,
+    "max_marketing_support_pct": 5.0,
+    "require_financial_proof_above_vnd_million": 300
+  },
+  "mandatory_conditions": {
+    "require_tax_id": true,
+    "require_pos_address": true,
+    "require_warranty_capability": true,
+    "min_warranty_technicians": 1,
+    "min_showroom_area_m2": 40,
+    "min_monthly_purchase_vnd_million": 150,
+    "require_independent_verification_for_continue": true
+  },
+  "evaluation_criteria": [
+    {
+      "id": "C1_POS_COVERAGE",
+      "name": "Điểm bán & Độ phủ thị trường",
+      "weight": 25,
+      "unverified_cap_ratio": 0.5
+    },
+    {
+      "id": "C2_WARRANTY_SERVICE",
+      "name": "Năng lực bảo hành & Dịch vụ khách hàng",
+      "weight": 30,
+      "unverified_cap_ratio": 0.4
+    },
+    {
+      "id": "C3_PURCHASE_PLAN",
+      "name": "Kế hoạch nhập hàng & Khả năng tiêu thụ",
+      "weight": 20,
+      "unverified_cap_ratio": 0.6
+    },
+    {
+      "id": "C4_FINANCIAL_COMPLIANCE",
+      "name": "Tuân thủ công nợ & Năng lực tài chính",
+      "weight": 25,
+      "unverified_cap_ratio": 0.4
+    }
+  ],
+  "decision_thresholds": {
+    "continue_min_score": 75.0,
+    "supplement_min_score": 50.0,
+    "priority_p1_min_score": 85.0,
+    "priority_p2_min_score": 75.0,
+    "high_commitment_threshold_vnd_million": 400
+  },
+  "escalation_mapping": {
+    "IDENTITY_DUPLICATE": {
+      "label": "Trùng danh tính / Đã thuộc hệ thống hiện tại",
+      "escalate_to": "Trưởng phòng PTKD & Bộ phận Kinh doanh",
+      "blocks_auto_continue": true
+    },
+    "TERRITORY_CONFLICT": {
+      "label": "Xung đột địa bàn bảo hộ với đối tác hiện tại",
+      "escalate_to": "Trưởng phòng PTKD & Bộ phận Kinh doanh",
+      "blocks_auto_continue": true
+    },
+    "POLICY_EXCEEDED": {
+      "label": "Yêu cầu công nợ / hỗ trợ thương mại vượt chính sách",
+      "escalate_to": "Bộ phận Tài chính & Trưởng phòng PTKD",
+      "blocks_auto_continue": true
+    },
+    "MISSING_EVIDENCE": {
+      "label": "Thiếu bằng chứng xác minh / Chưa kiểm chứng cam kết",
+      "escalate_to": "Bộ phận Vận hành / Kinh doanh / Tài chính (xác minh thực tế)",
+      "blocks_auto_continue": true
+    }
+  }
+}
+

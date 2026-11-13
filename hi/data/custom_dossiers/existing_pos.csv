@@ -1,0 +1,8 @@
+pos_id,partner_id,partner_name,region,province,district,ward,address,latitude,longitude,protection_scope,protection_radius_km
+POS001,DT001,Công ty TNHH Điện máy Thủ Đô,Miền Bắc,Hà Nội,Đống Đa,Láng Hạ,120 Láng Hạ Đống Đa Hà Nội,21.0168,105.8124,EXCLUSIVE_DISTRICT,5.0
+POS002,DT002,Cửa hàng Bếp Kinh Bắc,Miền Bắc,Bắc Ninh,TP Bắc Ninh,Vũ Ninh,45 Trần Hưng Đạo TP Bắc Ninh,21.1861,106.0763,RADIUS_KM,5.0
+POS003,DT003,Công ty CP Gia dụng Miền Trung,Miền Trung,Đà Nẵng,Hải Châu,Thạch Thang,88 Lê Duẩn Hải Châu Đà Nẵng,16.0678,108.2208,EXCLUSIVE_DISTRICT,5.0
+POS004,DT001,Công ty TNHH Điện máy Thủ Đô,Miền Bắc,Hải Phòng,Ngô Quyền,Lạch Tray,210 Lạch Tray Ngô Quyền Hải Phòng,20.8449,106.6881,RADIUS_KM,5.0
+POS005,DT004,Công ty TNHH Tân Phát,Miền Nam,TP.HCM,Quận 7,Tân Phong,300 Nguyễn Văn Linh Quận 7 TP.HCM,10.7295,106.7061,EXCLUSIVE_DISTRICT,5.0
+POS006,DT005,Trung tâm Điện máy Sài Gòn Xanh,Miền Nam,TP.HCM,Bình Thạnh,Phường 25,150 Điện Biên Phủ Bình Thạnh TP.HCM,10.8015,106.7145,EXCLUSIVE_DISTRICT,5.0
+
